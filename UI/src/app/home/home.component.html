@@ -1,0 +1,31 @@
+<section id="supporters" class="section-with-bg"> 
+
+   
+
+  <div class="container">
+    <div class="row">
+
+        <div   style="background-color:#ffffff;">
+          <div class="form">
+            <form name= "form" #TextForm="ngForm" > 
+              
+              <div class="form-group">
+                <textarea  (ngModelChange) = " OnSubmit(TextForm.value) " required minlength="10" maxlength="900" ngModel name="text" #text = "ngModel"  id="text" class="form-control" rows="15" data-rule="required" data-msg="Please write something for us" placeholder="Text"></textarea>
+                <div class="alert alert-danger " *ngIf="text.touched && !text.valid">Please write something for us [Atleast 10 chars]</div>
+              </div>
+              
+              <!-- <div class="text-center">
+                <button [disabled]="TextForm.invalid" class ="myButton" type="submit">Convert</button>
+              </div> -->
+            </form>
+          </div>
+        </div>
+        <div >
+            <pre style="background-color:#96D1CD;">{{showresults}}</pre>
+        </div>
+        <div  [innerHTML]="showresults" style="background-color:#74C3E1;">
+            
+        </div>
+  </div>
+</div>
+</section>
